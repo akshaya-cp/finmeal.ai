@@ -1,0 +1,24 @@
+# Goal
+
+Building an intelligent, user-friendly personal 
+finance + meal planner assistant using GenaI + RAG to help me 
+manage my expenses in my unemployment days
+
+# Modules (Proposed)
+
+1. AI Agent : Handles all AI-related responses using LangGraph, with optional search and RAG
+2. Expense Tracker : Add, update, list, and view expenses — store in local DB or JSON
+3. Meal Planner : Take user info (age, weight, etc.) and generate meals with AI help
+4. RAG Engine : Retrieve helpful facts from PDFs, CSVs, or scraped Indian data
+5. Frontend UI : Built in Streamlit to interact with all systems
+6. FastAPI Backend : API to act as a bridge between AI Agent, RAG, and UI
+
+# Tech Stack to be used
+
+1. LLM : OpenAI(gpt-4o (limited use as limited credits), gpt-4o-mini etc), Groq(various models (eg. Deepseek))
+2. Agent Framework : LangChain + LangGraph
+3. Backend : FastAPI
+4. Frontend : Streamlit
+5. Vector DB : FAISS or Chroma (not decided yet)
+6. File Parsing : LangChain DocumentLoaders
+7. Deployment : maybe Render or Hugging Face spaces (decision pending)
