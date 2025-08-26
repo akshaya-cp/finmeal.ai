@@ -60,3 +60,38 @@ def chat_endpoint(request : RequestState):
     )
 
     return {"response" : response}
+
+from backend.expense_manager import (
+    initialize_expense_file,
+    add_expense,
+    get_all_expenses,
+    get_monthly_total
+)
+
+initialize_expense_file()
+
+class ExpenseInput(BaseModel):
+    amount: float
+    category: str
+    note: str = ""
+
+@app.post("/expense/add")
+def add_expense_api(data: ExpenseInput):
+    """
+    Add a new expense with amount, category, and optional note.
+    """
+    return {"expense": add_expense(data.amount, data.category, data.note)}
+
+@app.get("/expense/all")
+def list_expenses_api():
+    """
+    Return all expenses stored in the file.
+    """
+    return {"expenses": get_all_expenses()}
+
+@app.get("/expense/monthly-total")
+def monthly_total_api():
+    """
+    Return the total amount spent this month.
+    """
+    return {"monthly_total": get_monthly_total()}
