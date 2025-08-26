@@ -1,0 +1,10 @@
+# virtual environments
+.venv/
+venv/
+.env
+__pycache__/
+*.py[cod]
+*.cpython-*
+.DS_Store
+Thumbs.db
+.vscode/
