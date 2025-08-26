@@ -95,3 +95,33 @@ def monthly_total_api():
     Return the total amount spent this month.
     """
     return {"monthly_total": get_monthly_total()}
+
+
+
+from backend.meal_planner import generate_meal_plan
+
+
+class MealRequest(BaseModel):
+    age: int
+    weight: float
+    height: float
+    location: str
+    budget: float
+    diet_type: str        
+    provider: str = "OpenAI"  
+
+@app.post("/meal/plan")
+def meal_plan_api(data: MealRequest):
+    """
+    Generate a personalized meal plan based on user input
+    """
+    meal_plan = generate_meal_plan(
+        age=data.age,
+        weight=data.weight,
+        height=data.height,
+        location=data.location,
+        budget=data.budget,
+        diet_type=data.diet_type,
+        provider=data.provider
+    )
+    return {"meal_plan": meal_plan}
