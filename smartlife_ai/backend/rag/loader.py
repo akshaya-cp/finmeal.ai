@@ -1,4 +1,5 @@
-from langchain.document_loaders import PyPDFLoader, CSVLoader, TextLoader
+from langchain_community.document_loaders import PyPDFLoader, CSVLoader, TextLoader
+from langchain_openai import OpenAIEmbeddings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from typing import List
 import os
