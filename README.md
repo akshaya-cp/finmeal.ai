@@ -60,6 +60,58 @@ smartlife_ai/
 ```bash
 git clone https://github.com/your-username/smartlife_ai.git
 cd smartlife_ai
+```
+
+### 🐍 Create and Activate Virtual Environment
+
+```bash
+# Create a virtual environment
+python3 -m venv venv
+
+# Activate it (depending on your OS)
+
+# For Mac/Linux:
+source venv/bin/activate
+
+# For Windows:
+venv\Scripts\activate
+```
+
+### Clone the Repo
+
+```bash
+git clone https://github.com/your-username/smartlife_ai.git
+cd smartlife_ai
+```
+
+###  Create and Activate Virtual Environment
+
+```bash
+python3 -m venv venv
+source venv/bin/activate      # for Mac/Linux
+venv\Scripts\activate         # for Windows
+```
+
+### Install Requirements
+
+```bash
+pip install -r requirements.txt
+```
+
+### Start Backend Server (FastAPI)
+
+```
+cd backend
+uvicorn main:app --host host_ip --port port_no. --reload
+```
+### Start Frontend UI (Streamlit)
+#### open in another terminal
+
+```bash
+cd frontend
+streamlit run streamlit_app.py
+```
+
 
 
 
